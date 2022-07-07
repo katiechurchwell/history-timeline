@@ -1,3 +1,4 @@
+var apiHtml = document.getElementById("apiHtml");
 var xhr = new XMLHttpRequest();
 
 // API URL notes 🤔
@@ -27,6 +28,7 @@ xhr.onload = function() {
   // // Log the data object
   // console.log(data);
   console.log(this.response)
+  apiHtml.innerHTML = this.response
 }
 
 // Send request to the server
