@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { regexFormat } from './utils/helpers';
 import "./App.css";
 import axios from "axios";
 
@@ -15,27 +16,21 @@ const App = () => {
         "https://en.wikipedia.org/w/api.php?action=parse&page=17th_century&prop=wikitext&section=1&format=json&formatversion=2&origin=*"
       );
 
-      // sanitize data
-      //remove HTML tags and content
-      const regexHTML=/(<script(\s|\S)*?<\/script>)|(<style(\s|\S)*?<\/style>)|(<!--(\s|\S)*?-->)|(<\/?(\s|\S)*?>)/g
-      const wikitext = res.data.parse.wikitext.replace(regexHTML,'')
-
-      // remove `{{ }}` and content
-      // remove [[]]
-      setData(wikitext.split("*"));
+      const responseParse = res.data.parse.wikitext;
+      setData(regexFormat(responseParse))
       setLoading(false);
     };
 
     fetchData();
-  }, [])
+  }, []);
 
-  return <>  
-       {data.map((item, i) => (
-          <li
-            key={i}
-          > {item} </li>
-        ))}
-  </>;
+  return (
+    <>
+      {data.map((item, i) => (
+        <li key={i}> {item} </li>
+      ))}
+    </>
+  );
 };
 
 export default App;
