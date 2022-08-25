@@ -11,7 +11,6 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-
       // fetch data
       const res = await axios.get(
         "https://en.wikipedia.org/w/api.php?action=parse&page=14th_century&prop=wikitext&section=1&format=json&formatversion=2&origin=*"
@@ -21,11 +20,9 @@ const App = () => {
       setData(regexFormat(responseParse));
       setLoading(false);
     };
-
     fetchData();
   }, []);
-
-  return <Timeline data={data} />;
+  return <Timeline />;
 };
 
 export default App;
