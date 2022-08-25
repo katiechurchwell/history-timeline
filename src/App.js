@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { regexFormat } from './utils/helpers';
+import { regexFormat } from "./utils/helpers";
+import Timeline from "./components/Timeline";
 import "./App.css";
 import axios from "axios";
 
@@ -13,24 +14,18 @@ const App = () => {
 
       // fetch data
       const res = await axios.get(
-        "https://en.wikipedia.org/w/api.php?action=parse&page=17th_century&prop=wikitext&section=1&format=json&formatversion=2&origin=*"
+        "https://en.wikipedia.org/w/api.php?action=parse&page=14th_century&prop=wikitext&section=1&format=json&formatversion=2&origin=*"
       );
 
       const responseParse = res.data.parse.wikitext;
-      setData(regexFormat(responseParse))
+      setData(regexFormat(responseParse));
       setLoading(false);
     };
 
     fetchData();
   }, []);
 
-  return (
-    <>
-      {data.map((item, i) => (
-        <li key={i}> {item} </li>
-      ))}
-    </>
-  );
+  return <Timeline data={data} />;
 };
 
 export default App;
