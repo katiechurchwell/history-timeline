@@ -9,10 +9,6 @@ This application is currently under construction.
 
 Utilizes the Wikipedia API to generate historical events onto a timeline.
 
-## Deployment
-
-## Demo/Screenshot
-
 ## Questions
   If you have any questions about this project, please open an issue or use the contact information below:
   * [katiechurchwell](https://www.github.com/katiechurchwell)
