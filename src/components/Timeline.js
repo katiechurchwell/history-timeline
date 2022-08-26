@@ -7,12 +7,9 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 
 function Timeline({ timelineData }) {
-  console.log(timelineData);
-
   return (
     <>
       {timelineData.map(({ id, value, index }) => (
-
         <TimelineItem key={index}>
           <TimelineSeparator>
             <TimelineDot />

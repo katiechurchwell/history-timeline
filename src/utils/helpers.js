@@ -19,7 +19,7 @@ export function regexFormat(data) {
     if (value != null) {
       return value[0];
     } else {
-      return "sorry, no data here!";
+      return "";
     }
   }
 
