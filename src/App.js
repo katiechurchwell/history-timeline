@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { regexFormat } from "./utils/helpers";
-import Timeline from "./components/Timeline";
+import Main from "./components/Main";
 import "./App.css";
 import axios from "axios";
 
@@ -22,7 +22,7 @@ const App = () => {
     };
     fetchData();
   }, []);
-  return <Timeline />;
+  return (<Main timelineData={data}/>);
 };
 
 export default App;

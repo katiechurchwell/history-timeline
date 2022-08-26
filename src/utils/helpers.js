@@ -32,7 +32,7 @@ export function regexFormat(data) {
       id: ifNull(match),
       value: element.replace(year, ""),
     };
-    console.log(object);
+
     objectArray.push(object);
   });
 
