@@ -10,7 +10,7 @@ function Timeline({ timelineData }) {
   return (
     <>
       {timelineData.map(({ id, value, index }) => (
-        <TimelineItem key={index}>
+        <TimelineItem key={index} position="alternate">
           <TimelineSeparator>
             <TimelineDot />
             <TimelineConnector />

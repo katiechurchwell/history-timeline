@@ -9,7 +9,6 @@ import Container from "@mui/material/Container";
 
 function DropdownMenu({ century, setCentury }) {
   //centuries drop-down
-  //   const [century, setCentury] = React.useState("");
 
   const handleChange = (event) => {
     setCentury(event.target.value);
@@ -47,7 +46,7 @@ function DropdownMenu({ century, setCentury }) {
   return (
     <Container>
       <Box>
-        <FormControl>
+        <FormControl sx={{ m: 3, minWidth: 120 }}>
           <InputLabel>Century</InputLabel>
           <Select value={century} label="Century" onChange={handleChange}>
             {centuryItems}
