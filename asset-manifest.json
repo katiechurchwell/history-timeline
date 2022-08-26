@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/history-timeline/static/css/main.e6c13ad2.css",
+    "main.js": "/history-timeline/static/js/main.31b1f74e.js",
+    "index.html": "/history-timeline/index.html",
+    "main.e6c13ad2.css.map": "/history-timeline/static/css/main.e6c13ad2.css.map",
+    "main.31b1f74e.js.map": "/history-timeline/static/js/main.31b1f74e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.31b1f74e.js"
+  ]
+}
