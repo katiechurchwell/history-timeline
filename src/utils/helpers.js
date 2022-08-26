@@ -1,3 +1,5 @@
+import { countries } from "../data/countries";
+
 export function regexFormat(data) {
   //sanitizing expressions
   const specialCharacter = /[\[\]={}|]/gi;
@@ -37,4 +39,17 @@ export function regexFormat(data) {
   });
 
   return objectArray;
+}
+
+export function categorizeByCountry(data) {
+  //for each entry from data, check against countries array for match against country or region (non exact)
+  data.map((dataValue) => {
+    countries.map((countryValue) => {
+      if (dataValue.value.includes(countryValue.region)) {
+        //if match, add additional property with region information
+        dataValue.region = countryValue.region;
+      }
+    });
+  });
+  return data;
 }

@@ -7,15 +7,16 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 
 function Timeline({ timelineData }) {
+
   return (
     <>
-      {timelineData.map(({ id, value, index }) => (
+      {timelineData.map(({ id, region, value, index }) => (
         <TimelineItem key={index} position="alternate">
           <TimelineSeparator>
             <TimelineDot />
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent>
+          <TimelineContent className={ region === "Europe" ? 'first' : '' }>
             {id}
             {value}
           </TimelineContent>

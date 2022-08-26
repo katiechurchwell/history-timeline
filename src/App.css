@@ -1,0 +1,33 @@
+/* REGIONS */
+
+/* Europe */
+.First {
+  background: #87b38d;
+}
+
+/* South/Central America
+South/Latin America  */
+.second {
+  background: #f2a359;
+}
+
+/* North America */
+.third {
+  background: #89daff;
+}
+
+/* Middle east
+Arab States */
+.fourth {
+  background: #cfb3cd;
+}
+
+/* Asia & Pacific */
+.fifth {
+  background: #f374ae;
+}
+
+/* Africa */
+.sixth {
+  background: #edae49;
+}

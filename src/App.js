@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { regexFormat } from "./utils/helpers";
+import { regexFormat, categorizeByCountry } from "./utils/helpers";
 import Timeline from "./components/Timeline";
 import DropdownMenu from "./components/DropdownMenu";
 import "./App.css";
@@ -10,8 +10,6 @@ const App = () => {
   const [data, setData] = useState([]);
   const [century, setCentury] = React.useState("");
 
-  console.log("century", century)
-
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
@@ -19,9 +17,14 @@ const App = () => {
       const res = await axios.get(
         `https://en.wikipedia.org/w/api.php?action=parse&page=${century}_century&prop=wikitext&section=1&format=json&formatversion=2&origin=*`
       );
-
+      //destructure response
       const responseParse = res.data.parse.wikitext;
-      setData(regexFormat(responseParse));
+      //apply regex filters
+      const sanitizedData = regexFormat(responseParse);
+      //add country region property
+      const categorizedData = categorizeByCountry(sanitizedData);
+      //apply to state
+      setData(categorizedData);
       setLoading(false);
     };
     fetchData();

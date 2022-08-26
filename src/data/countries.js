@@ -1,4 +1,4 @@
-[
+export const countries = [
   { country: "Andorra", region: "Europe" },
   { country: "United Arab Emirates", region: "Middle east" },
   { country: "Afghanistan", region: "Asia & Pacific" },
